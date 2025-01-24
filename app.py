@@ -26,7 +26,7 @@ st.title("Aadhaar Card Cropper")
 st.write("Upload your Aadhaar PDF file to extract and process its content.")
 
 uploaded_file = st.file_uploader("Choose a PDF file", type="pdf")
-password = st.text_input("Enter PDF password (if any):", type="txt")
+password = st.text_input("Enter PDF password (if any):", type="password")
 
 if uploaded_file:
     try:

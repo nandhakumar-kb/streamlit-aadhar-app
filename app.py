@@ -26,7 +26,7 @@ st.title("Aadhaar Card Cropper")
 st.write("Upload your Aadhaar PDF file to extract and process its content.")
 
 uploaded_file = st.file_uploader("Choose a PDF file", type="pdf")
-password = st.text_input("Enter PDF password (if any):", type="password")
+password = st.text_input("Enter PDF password (if any):", type="txt")
 
 if uploaded_file:
     try:
@@ -34,8 +34,8 @@ if uploaded_file:
         if not front:
             st.error(back)  # Show error message for invalid password
         else:
-            st.image(front, caption="Front Side", use_column_width=True)
-            st.image(back, caption="Back Side", use_column_width=True)
+            st.image(front, caption="Front Side", use_container_width=True)
+            st.image(back, caption="Back Side", use_container_width=True)
             output_pdf = save_as_pdf([front, back])
             st.download_button(
                 label="Download Cropped Aadhaar PDF",

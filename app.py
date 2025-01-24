@@ -11,8 +11,8 @@ def pdf_to_image(pdf_file, password=None):
         page.set_mediabox(rect)
         return Image.open(io.BytesIO(page.get_pixmap(dpi=300).tobytes()))
     page = doc[0]
-    front = fitz.Rect(31, 99, 293, 264)
-    back = fitz.Rect(300, 99, 564, 264)
+    front = fitz.Rect(48,58, 302, 220)
+    back = fitz.Rect(310, 58, 564, 220)
     return get_cropped_image(front), get_cropped_image(back)
 
 def save_as_pdf(images):
